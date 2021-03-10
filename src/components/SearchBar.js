@@ -13,6 +13,8 @@ export default function SearchBar() {
       setStories(storiesFromAPI);
     };
     getStories();
+
+    console.log(storiesFromAPI);
   }, []);
 
   const handleSubmit = (e) => {
