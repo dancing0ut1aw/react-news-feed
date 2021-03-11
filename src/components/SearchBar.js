@@ -2,36 +2,21 @@ import React, { useState, useEffect } from "react";
 
 export default function SearchBar() {
   const [stories, setStories] = useState([]);
-  const [inputValue, setInputValue] = useState();
+  const [inputValue, setInputValue] = useState("");
   const [url, setURL] = useState(
     "http://hn.algolia.com/api/v1/search?tags=story"
   );
 
   useEffect(() => {
-    const getStories = async () => {
-      const storiesFromAPI = await fetchStories();
-      setStories(storiesFromAPI);
-    };
-    getStories();
+    fetch(url)
+      .then((res) => res.json())
+      .then((stories) => setStories(stories.hits));
 
-    console.log(storiesFromAPI);
-  }, []);
+    console.log(stories);
+  }, [url]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-  };
-
-  let searchInput = React.createRef();
-
-  const fetchStories = async (val) => {
-    setInputValue(searchInput.current.value);
-    setURL(
-      `http://hn.algolia.com/api/v1/search?query=${searchInput.current.value}&tags=story`
-    );
-
-    let res = await fetch(url);
-    let data = await res.json();
-    return setStories(data.hits);
   };
 
   return (
@@ -39,10 +24,14 @@ export default function SearchBar() {
       <form onSubmit={handleSubmit}>
         <label>Search</label>
         <input
-          ref={searchInput}
           type="text"
           value={inputValue}
-          onChange={fetchStories}
+          onChange={(e) => {
+            setInputValue(e.target.value);
+            setURL(
+              `http://hn.algolia.com/api/v1/search?query=${e.target.value}&tags=story`
+            );
+          }}
         ></input>
       </form>
       <ul>
