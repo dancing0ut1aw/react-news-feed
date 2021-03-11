@@ -22,9 +22,7 @@ function App() {
     fetch(url)
       .then((res) => res.json())
       .then((stories) => setStories(stories.hits));
-
-    console.log(stories);
-  }, [url, stories]);
+  }, [url]);
 
   return (
     <div className="App">
