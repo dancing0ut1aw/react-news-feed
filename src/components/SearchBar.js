@@ -1,19 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-export default function SearchBar() {
-  const [stories, setStories] = useState([]);
-  const [inputValue, setInputValue] = useState("");
-  const [url, setURL] = useState(
-    "http://hn.algolia.com/api/v1/search?tags=story"
-  );
-
-  useEffect(() => {
-    fetch(url)
-      .then((res) => res.json())
-      .then((stories) => setStories(stories.hits));
-
-    console.log(stories);
-  }, [url]);
+export default function SearchBar(props) {
+  const { stories, searchInput, inputValue, handleChange } = props;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,14 +12,10 @@ export default function SearchBar() {
       <form onSubmit={handleSubmit}>
         <label>Search</label>
         <input
+          ref={searchInput}
           type="text"
           value={inputValue}
-          onChange={(e) => {
-            setInputValue(e.target.value);
-            setURL(
-              `http://hn.algolia.com/api/v1/search?query=${e.target.value}&tags=story`
-            );
-          }}
+          onChange={handleChange}
         ></input>
       </form>
       <ul>
