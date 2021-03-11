@@ -18,11 +18,6 @@ export default function SearchBar(props) {
           onChange={handleChange}
         ></input>
       </form>
-      <ul>
-        {stories?.map((story) => {
-          return <li key={story.objectID}>{story.title}</li>;
-        })}
-      </ul>
     </div>
   );
 }
