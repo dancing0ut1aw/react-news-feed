@@ -7,6 +7,8 @@ function App() {
       NEWS FEED
       <Feed />
     </div>
+
+    
   );
 }
 
