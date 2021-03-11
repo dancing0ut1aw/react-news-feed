@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
-import SearchBar from "./components/SearchBar";
+// import SearchBar from "./components/SearchBar";
+import Feed from "./components/Feed"
 
 function App() {
   const [stories, setStories] = useState([]);
@@ -26,12 +27,13 @@ function App() {
 
   return (
     <div className="App">
-      <SearchBar
+      {/* <SearchBar
         stories={stories}
         searchInput={searchInput}
         inputValue={inputValue}
         handleChange={handleChange}
-      />
+      /> */}
+      <Feed stories={stories}/>
     </div>
   );
 }
