@@ -37,14 +37,16 @@ function App() {
 
   return (
     <div className="App">
-      <SearchBar
-        option={option}
-        searchInput={searchInput}
-        selectOptions={selectOptions}
-        inputValue={inputValue}
-        handleChange={handleChange}
-      />
-      <Feed stories={stories} option={option} />
+      <div class="container">
+        <SearchBar
+          option={option}
+          searchInput={searchInput}
+          selectOptions={selectOptions}
+          inputValue={inputValue}
+          handleChange={handleChange}
+        />
+        <Feed stories={stories} option={option} />
+      </div>
     </div>
   );
 }
