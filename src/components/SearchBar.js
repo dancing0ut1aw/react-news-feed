@@ -1,7 +1,13 @@
 import React from "react";
 
 export default function SearchBar(props) {
-  const { stories, searchInput, inputValue, handleChange } = props;
+  const {
+    option,
+    searchInput,
+    selectOptions,
+    inputValue,
+    handleChange,
+  } = props;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -17,6 +23,11 @@ export default function SearchBar(props) {
           value={inputValue}
           onChange={handleChange}
         ></input>
+        <select ref={selectOptions} value={option} onChange={handleChange}>
+          <option value="story">Stories</option>
+          <option value="comment">Comments</option>
+          <option value="author_">Author</option>
+        </select>
       </form>
     </div>
   );
