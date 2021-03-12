@@ -26,6 +26,7 @@ export default function SearchBar(props) {
         <select ref={selectOptions} value={option} onChange={handleChange}>
           <option value="story">Stories</option>
           <option value="comment">Comments</option>
+          <option value="author_">Author</option>
         </select>
       </form>
     </div>

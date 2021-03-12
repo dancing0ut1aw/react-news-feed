@@ -17,9 +17,16 @@ function App() {
   const handleChange = () => {
     setInputValue(searchInput.current.value);
     setOption(selectOptions.current.value);
-    setURL(
-      `http://hn.algolia.com/api/v1/search?query=${searchInput.current.value}&tags=${selectOptions.current.value}`
-    );
+
+    if (option !== "author_") {
+      setURL(
+        `http://hn.algolia.com/api/v1/search?query=${searchInput.current.value}&tags=${selectOptions.current.value}`
+      );
+    } else {
+      setURL(
+        `http://hn.algolia.com/api/v1/search?tags=author_${searchInput.current.value}`
+      );
+    }
   };
 
   useEffect(() => {
