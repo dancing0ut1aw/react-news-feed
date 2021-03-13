@@ -1,6 +1,5 @@
 import React from "react";
 import "../styles/searchBar.css";
-import logo from "../images/hacker-logo.png";
 
 export default function SearchBar(props) {
   const {
