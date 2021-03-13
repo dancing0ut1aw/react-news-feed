@@ -45,7 +45,11 @@ function App() {
           inputValue={inputValue}
           handleChange={handleChange}
         />
-        <Feed stories={stories} option={option} />
+        <Feed 
+          stories={stories} 
+          option={option} 
+          inputValue={inputValue}
+        />
       </div>
     </div>
   );
