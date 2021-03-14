@@ -8,6 +8,7 @@ function App() {
   const [stories, setStories] = useState([]);
   const [option, setOption] = useState([]);
   const [inputValue, setInputValue] = useState("");
+  const [date, setDate] = useState(0)
   // const [filterData, SetFilteredData] = useState([]);
   const [url, setURL] = useState(
     "http://hn.algolia.com/api/v1/search?tags=story"
@@ -16,7 +17,6 @@ function App() {
   let searchInput = React.createRef();
   let selectOptions = React.createRef();
   let selectOptionsDate = React.createRef();
-
 
   const handleChange = () => {
     setInputValue(searchInput.current.value);
@@ -32,6 +32,12 @@ function App() {
       );
     }
   };
+
+  const handleDateChange = (dateParams) => {
+    setURL(
+      `http://hn.algolia.com/api/v1/search?query=${searchInput.current.value}&tags=${selectOptions.current.value}&numericFilters=created_at_i>${dateParams}`
+    );
+  }
 
   useEffect(() => {
     fetch(url)
@@ -51,6 +57,7 @@ function App() {
       <DateFilter 
       stories={stories}
       selectOptionsDate={selectOptionsDate}
+      handleDateChange={handleDateChange}
       />
       <Feed stories={stories} option={option} />
     </div>
