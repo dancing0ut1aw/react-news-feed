@@ -1,0 +1,44 @@
+.search-bar {
+  background: #ff742b;
+  display: flex;
+  align-items: center;
+  padding: 5px 20px;
+}
+
+.search-bar img {
+  max-width: 100px;
+}
+
+.search-bar form {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.search-bar form label {
+  display: block;
+  flex-basis: 100%;
+  font-weight: bold;
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.search-bar form input,
+.search-bar form select {
+  border: none;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.search-bar form input {
+  font-size: 1.5rem;
+  padding: 5px 10px;
+  flex: 0 0 80%;
+}
+
+.search-bar form select {
+  font-size: 1.2rem;
+  padding: 9px 10px;
+  margin-left: 20px;
+  flex: 1;
+}

@@ -15,7 +15,8 @@ export default function SearchBar(props) {
   };
 
   return (
-    <div>
+    <div class="search-bar">
+      {/* <img src={logo} className="App-logo" alt="logo" /> */}
       <form onSubmit={handleSubmit}>
         <label>Search</label>
         <input

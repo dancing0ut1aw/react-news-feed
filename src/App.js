@@ -47,6 +47,7 @@ function App() {
 
   return (
     <div className="App">
+
       <SearchBar
         option={option}
         searchInput={searchInput}
@@ -60,6 +61,7 @@ function App() {
       handleDateChange={handleDateChange}
       />
       <Feed stories={stories} option={option} />
+
     </div>
   );
 }

@@ -1,3 +1,11 @@
 .App {
-  text-align: center;
+  background: #ffffff;
+}
+
+.App .container {
+  max-width: 1600px;
+  width: 90%;
+  min-height: 100vh;
+  margin: auto;
+  background: #f6f6ef;
 }
