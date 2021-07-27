@@ -8,7 +8,6 @@ function App() {
   const [stories, setStories] = useState([]);
   const [option, setOption] = useState([]);
   const [inputValue, setInputValue] = useState("");
-  const [date, setDate] = useState(0)
   // const [filterData, SetFilteredData] = useState([]);
   const [url, setURL] = useState(
     "http://hn.algolia.com/api/v1/search?tags=story"

@@ -1,7 +1,7 @@
 import React from "react";
  
 export default function DateFilter(props) {
-  const { stories,
+  const { 
           selectOptionsDate,
           handleDateChange,
         } = props
