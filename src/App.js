@@ -10,7 +10,7 @@ function App() {
   const [inputValue, setInputValue] = useState("");
   // const [filterData, SetFilteredData] = useState([]);
   const [url, setURL] = useState(
-    "http://hn.algolia.com/api/v1/search?tags=story"
+    "https://hn.algolia.com/api/v1/search?tags=story"
   );
 
   let searchInput = React.createRef();
