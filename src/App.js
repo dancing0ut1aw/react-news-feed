@@ -23,18 +23,18 @@ function App() {
 
     if (option !== "author_") {
       setURL(
-        `http://hn.algolia.com/api/v1/search?query=${searchInput.current.value}&tags=${selectOptions.current.value}`
+        `https://hn.algolia.com/api/v1/search?query=${searchInput.current.value}&tags=${selectOptions.current.value}`
       );
     } else {
       setURL(
-        `http://hn.algolia.com/api/v1/search?tags=author_${searchInput.current.value}`
+        `https://hn.algolia.com/api/v1/search?tags=author_${searchInput.current.value}`
       );
     }
   };
 
   const handleDateChange = (dateParams) => {
     setURL(
-      `http://hn.algolia.com/api/v1/search?query=${searchInput.current.value}&tags=${selectOptions.current.value}&numericFilters=created_at_i>${dateParams}`
+      `https://hn.algolia.com/api/v1/search?query=${searchInput.current.value}&tags=${selectOptions.current.value}&numericFilters=created_at_i>${dateParams}`
     );
   }
 
